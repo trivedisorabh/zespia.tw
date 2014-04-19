@@ -1,0 +1,117 @@
+#archive-header
+  padding: 40px 0
+  font-family: font-title
+  text-align: center
+  border-bottom: 1px solid color-border
+
+#archive-header-subtitle
+  color: color-grey
+  line-height: 1em
+  display: block
+  margin-bottom: 1em
+
+#archive-header-title
+  font-size: 2em
+  font-weight: bold
+  color: color-default
+
+.archives
+  padding-top: 40px
+  border-bottom: 1px solid color-border
+
+.archive-year-wrap
+  text-align: center
+
+.archive-year
+  display: inline-block
+  font-family: font-title
+  border: 1px solid color-border
+  padding: 0px 15px
+  border-radius: 15px
+  line-height: 25px
+  color: color-grey
+  text-decoration: none
+  transition: color 0.2s
+  &:hover
+    color: color-link
+
+.archive-post-list
+  padding: 30px 0
+  position: relative
+  @media screen and (min-width: 768px)
+    &:last-child
+      padding-bottom: 60px
+    &:before
+      content: ""
+      border-right: 4px solid color-border
+      position: absolute
+      right: 50%
+      margin-right: -4px
+      top: 0
+      height: 100%
+
+.archive-post
+  font-family: font-title
+  position: relative
+  padding: 10px 0
+  text-align: center
+  @media screen and (min-width: 768px)
+    width: 50%
+    &:before
+      content: ""
+      position: absolute
+      bottom: 1em
+      border-radius: 50%
+      background: #fff
+      border: 2px solid color-border
+      width: 8px
+      height: 8px
+      margin-bottom: 13px
+      outline: 2px solid #fff
+      @media screen and (max-width: 768px)
+        display: none
+    &.odd
+      margin-left: 50%
+      text-align: left
+      &:before
+        left: -4px
+    &.even
+      text-align: right
+      &:before
+        right: -8px
+
+.archive-post-title
+  color: color-default
+  text-decoration: none
+  display: block
+  padding: 0 20px 5px
+  transition: color 0.2s
+  font-weight: bold
+  line-height: line-height
+  &:hover
+    color: color-link
+
+.archive-post-footer-wrap
+  border-top: 1px solid color-border
+  padding: 8px 20px 0
+  line-height: 1em
+  font-size: 0.85em
+
+.archive-post-footer
+  clearfix()
+  display: inline-block
+
+.archive-post-footer-link
+  color: color-grey
+  text-decoration: none
+  transition: color 0.2s
+  float: left
+  &:hover
+    color: color-link
+  &:before
+    content: "/"
+    padding: 0 10px
+    color: color-border
+  &:first-child
+    &:before
+      display: none

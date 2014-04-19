@@ -1,0 +1,71 @@
+@import "nib"
+
+global-reset()
+
+input, button
+  &::-moz-focus-inner
+    border: 0
+    padding: 0
+
+// Colors
+color-default = #444
+color-grey = #999
+color-border = #ddd
+color-link = #0e83cd
+
+// Fonts
+font-sans = "Helvetica Neue", Helvetica, Arial, sans-serif
+font-title = "Open Sans", font-sans
+font-serif = Georgia, "Times New Roman", serif
+font-mono = Monaco, Menlo, Consolas, monospace
+
+font-icon = FontAwesome
+font-icon-path = "fonts/fontawesome-webfont"
+font-icon-version = "3.2.1"
+
+@font-face
+  font-family: FontAwesome
+  font-style: normal
+  font-weight: normal
+  src: url(font-icon-path + ".eot?v=#" + font-icon-version)
+  src: url(font-icon-path + ".eot?#iefix&v=#" + font-icon-version) format("embedded-opentype"),
+       url(font-icon-path + ".woff?v=#" + font-icon-version) format("woff"),
+       url(font-icon-path + ".ttf?v=#" + font-icon-version) format("truetype"),
+       url(font-icon-path + ".svg#fontawesomeregular?v=#" + font-icon-version) format("svg")
+
+// Grid
+column-width = 60px
+gutter-width = 20px
+columns = 12
+
+@import "_util/grid"
+
+// Variables
+line-height = 1.618em
+banner-height = 250px
+banner-url = "images/k4ns87vdj2h95y9.jpg"
+main-nav-height = 50px
+
+@import "_util/mixin"
+
+body
+  font: 16px font-sans
+  @media screen and (max-width: 480px)
+    font-size: 14px
+
+.outer
+  clearfix()
+  max-width: (column-width + gutter-width) * columns + gutter-width
+  margin: 0 auto
+  padding: 0 gutter-width
+
+.inner
+  column(columns)
+
+@import "_partial/header"
+@import "_partial/article"
+@import "_partial/comment"
+@import "_partial/index"
+@import "_partial/archive"
+@import "_partial/footer"
+@import "_partial/highlight"

@@ -1,0 +1,10 @@
+<% if (post.tags && post.tags.length){ %>
+<div class="post-footer-tags">
+  <strong class="post-footer-tags-title">Tags:</strong>
+  <%- list_tags(post.tags, {
+    style: 'none',
+    show_count: false,
+    class: 'post-footer-tag'
+  }) %>
+</div>
+<% } %>

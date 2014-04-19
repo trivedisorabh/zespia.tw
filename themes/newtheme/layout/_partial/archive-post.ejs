@@ -1,0 +1,11 @@
+<li class="archive-post  <%= even ? 'even' : 'odd' %>">
+  <h1>
+    <a class="archive-post-title" href="<%- config.root %><%- post.path %>"><%= post.title %></a>
+  </h1>
+  <footer class="archive-post-footer-wrap">
+    <div class="archive-post-footer">
+      <a class="archive-post-footer-link" href="<%- config.root %><%- post.path %>"><%= post.date.format('MMM D') %></a>
+      <a href="<%- post.permalink %>#disqus_thread" class="archive-post-footer-link">Comments</a>
+    </div>
+  </footer>
+</li>

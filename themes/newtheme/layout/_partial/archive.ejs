@@ -1,0 +1,84 @@
+<%
+var title = '',
+  subtitle = '';
+
+if (page.category){
+  title = page.category;
+  subtitle = 'Category';
+}
+if (page.tag){
+  title = page.tag;
+  subtitle = 'Tag';
+}
+if (page.archive){
+  title = 'Archives';
+}
+%>
+
+<% if (title){ %>
+  <header id="archive-header">
+    <div class="outer">
+      <div class="inner">
+        <% if (subtitle){ %>
+          <span id="archive-header-subtitle"><%= subtitle %></span>
+        <% } %>
+        <h1 id="archive-header-title"><%= title %></h1>
+      </div>
+    </div>
+  </header>
+<% } %>
+
+<% if (pagination == 2){ %>
+  <% page.posts.each(function(post){ %>
+    <%- partial('article', {post: post, index: true}) %>
+  <% }) %>
+  <nav id="page-nav">
+    <div class="outer">
+      <div class="inner">
+        <div id="paginator">
+          <%- paginator({
+            prev_text: '&laquo; Prev',
+            next_text: 'Next &raquo;'
+          }) %>
+        </div>
+        <% if (index){ %>
+          <div id="archive-navi">
+            <a class="archive-navi-link" href="<%= config.root %>archives/">Archives</a>
+            <div id="archive-tags">
+              <%- list_tags({
+                style: 'none',
+                separator: '',
+                class: 'archive-tags'
+              }) %>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </nav>
+<% } else { %>
+  <% var last; %>
+  <section class="archives">
+    <div class="outer">
+      <div class="inner">
+        <% page.posts.each(function(post, i){ %>
+          <% var year = post.date.year(); %>
+          <% if (last != year){ %>
+            <% if (last != null){ %>
+              </ul>
+            <% } %>
+            <% last = year; %>
+            <div class="archive-year-wrap">
+              <a href="<%- config.root %>archives/<%= year %>" class="archive-year"><%= year %></a>
+            </div>
+            <ul class="archive-post-list">
+          <% } %>
+          <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
+        <% }) %>
+        <% if (page.posts.length){ %>
+          </ul>
+        <% } %>
+      </div>
+    </div>
+  </section>
+<% } %>

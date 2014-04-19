@@ -1,0 +1,48 @@
+#page-nav
+  padding: 40px 0
+  text-align: center
+  font-family: font-title
+  color: color-grey
+  border-bottom: 1px solid color-border
+  a
+    color: color-grey
+    text-decoration: none
+    transition: 0.2s
+    &:hover
+      color: color-link
+
+#paginator
+  margin-bottom: line-height
+  position: relative
+  a, span
+    padding: 0 10px
+    &.current
+      color: color-default
+      font-weight: bold
+  .extend
+    padding: 0
+    position: absolute
+    top: 0
+    &.prev
+      left: 0
+    &.next
+      right: 0
+
+.archive-navi-link
+  short-separator()
+
+#archive-tags
+  padding-top: 20px
+
+.archive-tags-link
+  border: 1px solid color-border
+  display: inline-block
+  line-height: 25px
+  margin: 10px
+  padding: 0 15px
+  border-radius: 15px
+
+.archive-tags-count
+  color: #bbb
+  font-size: 11px
+  padding-left: 8px

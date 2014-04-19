@@ -1,0 +1,139 @@
+logo-size = 50px
+
+main-nav-icon()
+  color: color-border
+  font: 25px font-icon
+  text-decoration: none
+  line-height: main-nav-height
+  transition: color 0.2s
+  cursor: pointer
+  z-index: 1
+  text-align: center
+  padding: 0 20px
+  margin: 0 -20px
+  &:hover
+    color: color-grey
+
+#header
+  position: relative
+  height: banner-height + main-nav-height + 1
+
+#banner
+  background: url(banner-url) center #fff
+  background-size: cover
+  height: banner-height
+  position: relative
+
+#logo-wrap
+  position: absolute
+  left: 0
+  top: 50%
+  margin-top: logo-size * -0.5
+  width: 100%
+
+#logo
+  hide-text()
+  display: block
+  height: 50px
+  background-repeat: no-repeat
+  background-position: center
+  background-image: url("images/logo.png")
+  background-image: url("images/logo.svg"), none
+  background-size: 50px
+
+#main-nav-inner
+  position: relative
+  height: main-nav-height
+
+#main-nav
+  text-align: center
+  position: relative
+  background: rgba(255, 255, 255, 0.95)
+  border-bottom: 1px solid color-border
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+  &.fixed
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 999
+
+#main-nav-list
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  @media screen and (max-width: 768px)
+    border-top: 1px solid color-border
+    display: none
+    position: static
+    .menu &
+      display: block
+
+.main-nav-item
+  display: inline-block
+  padding: 0 20px
+
+.main-nav-link
+  text-decoration: none
+  color: color-grey
+  line-height: main-nav-height
+  display: block
+  font-family: font-title
+  transition: color 0.2s
+  &:hover
+    color: color-link
+
+#main-nav-menu-btn
+  main-nav-icon()
+  position: absolute
+  top: 0
+  left: 0
+  display: none
+  @media screen and (max-width: 768px)
+    display: block
+
+#main-nav-search-btn
+  main-nav-icon()
+  position: absolute
+  top: 0
+  right: 0
+
+#search-form-wrap
+  border-top: 1px solid color-border
+  height: main-nav-height
+  display: none
+  .search &
+    display: block
+
+#search-form-inner
+  position: relative
+
+.search-form
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+
+#search-form-close
+  main-nav-icon()
+  position: absolute
+  top: 0
+  left: 0
+
+.search-form-input
+  border: none
+  background: none
+  height: main-nav-height
+  font-size: 1em
+  font-family: font-title
+  width: 100%
+  box-sizing: border-box
+  padding-left: 45px
+  outline: none
+  appearance: textfield
+  &::-webkit-search-decoration
+  &::-webkit-search-cancel-button
+  &::-webkit-search-results-button
+  &::-webkit-search-results-decoration
+    display: none

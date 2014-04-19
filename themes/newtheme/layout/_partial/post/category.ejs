@@ -1,0 +1,10 @@
+<% if (post.categories && post.categories.length){ %>
+<div class="post-footer-tags">
+  <strong class="post-footer-tags-title">Categories:</strong>
+  <%- list_categories(post.categories, {
+    style: 'none',
+    show_count: false,
+    class: 'post-footer-tag'
+  }) %>
+</div>
+<% } %>
